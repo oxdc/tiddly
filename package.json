@@ -1,0 +1,18 @@
+{
+  "name": "tiddly",
+  "version": "1.0.0",
+  "description": "tiddly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tiddly"
+  ],
+  "author": "oxdc",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^2.0.6",
+    "open": "0.0.5"
+  }
+}
