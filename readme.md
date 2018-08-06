@@ -1,6 +1,6 @@
 # Tiddly
 
-Electron desktop application for TiddlyWiki on Node.js
+A Electron desktop application for TiddlyWiki on Node.js
 
 
 ## Screenshots
@@ -24,7 +24,7 @@ Electron desktop application for TiddlyWiki on Node.js
   ```
   You can see installed version of TiddlyWiki if OK.
 
-+ Create your wiki, remember to change the name!
++ Create your Wiki, remember to change the name `mynewwiki` to what you want!
   
   ```bash
   cd /path/to/store/your/wiki
@@ -113,4 +113,4 @@ Electron desktop application for TiddlyWiki on Node.js
   electron-packager .
   ```
 
-+ Done!
++ Done! Enjoy!
