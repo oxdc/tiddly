@@ -2,6 +2,12 @@
 
 Electron desktop application for TiddlyWiki on Node.js
 
+
+## Screenshots
+
+![Screenshot 1](doc/Screenshot1.png)
+![Screenshot 2](doc/Screenshot2.png)
+
 ## Getting Started
 
 + [Install Node.js](https://nodejs.org/en/download/) and [npm](https://www.npmjs.com/get-npm)
