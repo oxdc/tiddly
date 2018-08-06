@@ -1,7 +1,14 @@
 # Tiddly
 
-A Electron desktop application for TiddlyWiki on Node.js
+A Electron desktop application for [TiddlyWiki](https://tiddlywiki.com/) on Node.js
 
+> TiddlyWiki
+>
+> A non-linear personal web notebook that anyone can use and keep forever, independently of any corporation.
+>
+> [Github repository](https://github.com/Jermolene/TiddlyWiki5)
+>
+> [Website](https://tiddlywiki.com/)
 
 ## Screenshots
 
