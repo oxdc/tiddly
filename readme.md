@@ -1,6 +1,6 @@
 # Tiddly
 
-A Electron desktop application for [TiddlyWiki](https://tiddlywiki.com/) on Node.js
+An Electron desktop application for [TiddlyWiki](https://tiddlywiki.com/) on Node.js
 
 > TiddlyWiki
 >
