@@ -6,6 +6,7 @@ const {
 const open = require("open")
 const spawn = require('child_process').spawn
 const fs = require('fs')
+const path = require('path')
 const configuration = require('./config.js')
 
 let tiddlywiki
@@ -37,9 +38,11 @@ if (configuration.wikiDir) {
     })
 }
 
-if (configuration.enableContentServer) {
+var csJsDir = path.join(app.getAppPath(), './contentServer.js')
+
+if (configuration.enableContentServer && fs.existsSync(csJsDir)) {
     contentServer = spawn('node', [
-        './contentServer.js'
+        csJsDir
     ])
 
     contentServer.stdout.on('data', (data) => {
@@ -66,7 +69,7 @@ function createWindow() {
         }
     })
 
-    win.loadURL('file://'+ __dirname +'/index.html')
+    win.loadURL('file://'+ __dirname + '/index.html')
 
     win.on('page-title-updated', function(event) {
         event.preventDefault();
