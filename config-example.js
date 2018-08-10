@@ -26,7 +26,7 @@
     */
     enableContentServer: false,
     // default root directory of the Tiddly Content Server
-    csRoot: 'contents',
+    csRoot: './contents',
     // Tiddly Content Server host address
     csHost: '127.0.0.1',
     // port of Tiddly Content Server
@@ -39,7 +39,7 @@
 
       ! Remember: accessing root directory '/' is always forbidden
     */
-    csWhiteList: [],
+    csWhiteList: ['demo'],
     /*
       MIME types of the Tiddly Content Server
 

@@ -149,7 +149,7 @@ An Electron desktop application for [TiddlyWiki](https://tiddlywiki.com/) on Nod
     */
     enableContentServer: true,
     // default root directory of the Tiddly Content Server
-    csRoot: 'contents',
+    csRoot: './contents',
     // Tiddly Content Server host address
     csHost: '127.0.0.1',
     // port of Tiddly Content Server
@@ -162,11 +162,11 @@ An Electron desktop application for [TiddlyWiki](https://tiddlywiki.com/) on Nod
 
       ! Remember: accessing root directory '/' is always forbidden
     */
-    csWhiteList: []
+    csWhiteList: ['demo']
   }
   ```
   
-  After the Tiddly Content Server launched, you can see a demo page at http://localhost:8081/contents .
+  After the Tiddly Content Server launched, you can see a demo page at http://localhost:8081/demo .
 
   You can access your files through it and never need to import all of them into your wiki.
 
@@ -181,9 +181,9 @@ An Electron desktop application for [TiddlyWiki](https://tiddlywiki.com/) on Nod
   title: Content Server Test
   type: text/vnd.tiddlywiki
 
-  [img[picturename|http://localhost:8081/contents/path/to/your/picture.png]]
+  [img[tiddly|http://localhost:8081/demo/imgs/tiddly.png]]
 
-  [[text|http://localhost:8081/contents/path/to/your/pdf.pdf]]
+  [[pdf|http://localhost:8081/demo/pdfs/hints.pdf]]
   ```
 
   You can edit MIME types of your Tiddly Content Server. See also [MDN Incomplete list of MIME types](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Complete_list_of_MIME_types) .

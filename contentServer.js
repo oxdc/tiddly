@@ -6,10 +6,8 @@ const path = require('path')
 const configuration = require('./config.js')
 const hostname = configuration.csHost
 const port = configuration.csPort
-var wl = configuration.csWhiteList
-wl.push(configuration.csRoot)
-const whiteList = wl
-delete wl
+const rootDir = configuration.csRoot
+const whiteList = configuration.csWhiteList
 const mimeType = configuration.mimeType
 
 const server = http.createServer((req, res) => {
@@ -31,7 +29,8 @@ const server = http.createServer((req, res) => {
     }
   }
   const parsedUrl = url.parse(req.url)
-  let pathname = `.${parsedUrl.pathname}`
+  let pathname = path.join(rootDir, `.${parsedUrl.pathname}`)
+  console.log(`Access: .${pathname}`)
   fs.exists(pathname, function (exist) {
     if(!exist) {
       res.statusCode = 404
