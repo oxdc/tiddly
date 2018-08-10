@@ -8,12 +8,13 @@ const spawn = require('child_process').spawn
 const fs = require('fs')
 const configuration = require('./config.js')
 
-let child
+let tiddlywiki
+let contentServer
 
 if (configuration.wikiDir) {
     fs.exists(configuration.wikiDir, (exists) => {
         if (exists) {
-            child = spawn('tiddlywiki', [
+            tiddlywiki = spawn('tiddlywiki', [
                 configuration.wikiDir,
                 '--server',
                 configuration.port,
@@ -25,14 +26,28 @@ if (configuration.wikiDir) {
                 configuration.host
             ])
 
-            child.stdout.on('data', (data) => {
+            tiddlywiki.stdout.on('data', (data) => {
                 console.log(`tiddlywiki: ${data}`)
             })
 
-            child.stderr.on('data', (data) => {
+            tiddlywiki.stderr.on('data', (data) => {
                 console.log(`tiddlywiki ERROR: ${data}`)
             })
         }
+    })
+}
+
+if (configuration.enableContentServer) {
+    contentServer = spawn('node', [
+        './contentServer.js'
+    ])
+
+    contentServer.stdout.on('data', (data) => {
+        console.log(`content server: ${data}`)
+    })
+
+    contentServer.stderr.on('data', (data) => {
+        console.log(`content server ERROR: ${data}`)
     })
 }
 
@@ -58,8 +73,11 @@ function createWindow() {
     });
       
     win.on('closed', () => {
-        if (child) {
-            process.kill(child.pid + 1, 'SIGHUP')
+        if (tiddlywiki) {
+            process.kill(tiddlywiki.pid + 1, 'SIGHUP')
+        }
+        if (contentServer) {
+            process.kill(contentServer.pid + 1, 'SIGHUP')
         }
         win = null
     })
