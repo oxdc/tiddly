@@ -38,7 +38,7 @@ An Electron desktop application for [TiddlyWiki](https://tiddlywiki.com/) on Nod
   tiddlywiki mynewwiki --init server
   ```
 
-+ Optional: You can run your Wiki now if you want to try out.
++ ***Optional:*** You can run your Wiki now if you want to try out.
   
   ```bash
   tiddlywiki mynewwiki --server
@@ -114,7 +114,7 @@ An Electron desktop application for [TiddlyWiki](https://tiddlywiki.com/) on Nod
     enableContentServer: false
   }
   ```
-+ Optional: Edit the Tiddly Content Server
++ ***Optional:*** Edit the Tiddly Content Server
 
   ```bash
   vim ./config.js
