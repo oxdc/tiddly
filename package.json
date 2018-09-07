@@ -12,7 +12,7 @@
   "author": "oxdc",
   "license": "MIT",
   "dependencies": {
-    "electron": "^2.0.6",
+    "electron": "^2.0.8",
     "open": "0.0.5"
   }
 }
